@@ -44,7 +44,6 @@ if(isset($_GET['q']) && isset($_GET['p'])) {
 	  	"date" => $row['date'],
 	  	"type" => $row['type'],
 	  	"mag" => $row['mag'],
-	  	"hail_size" => split(" in.", $row['mag'])[0],
 	  	"deaths" => $row['deaths'],
 	  	"injuries" => $row['injuries'],
 	  	"damage" => $d,
