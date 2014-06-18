@@ -14,9 +14,13 @@ if(isset($_GET['q']) && isset($_GET['p'])) {
 	$q = $_GET['q'];
 	$p = $_GET['p'];
 
+	if($q == "county") {
+
+	}
+
 	$query = sprintf("SELECT * FROM data WHERE %s='%s' order by date asc",
-            mysqli_real_escape_string($q),
-            mysqli_real_escape_string($p));
+            mysqli_real_escape_string($con, $q),
+            mysqli_real_escape_string($con, $p));
 
 	$result = mysqli_query($con,$query);
 
