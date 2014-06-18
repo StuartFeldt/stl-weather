@@ -38,14 +38,14 @@ for(var y = 0; y <15; y++) {
     .attr("x", (w/14)*y)
     .attr("y", h + 20);
 }
-/*var info = d3.select("body").append("div")
-                   .attr("id", "info");
-*/
+
 function update(data, speed, max) {      
         yaxis.selectAll('*').remove();
         var yaxis_mks = [];
         for(var i = 0; i<=max; i+=(Math.round(max/10))+1) {
-          /*var mrk = yaxis.append("line")
+          /* --Ticks for x axis--
+
+          var mrk = yaxis.append("line")
           .attr("y2", h+30)
           .attr("y1", h+30)
           .transition()
@@ -69,12 +69,10 @@ function update(data, speed, max) {
         }
 
         var firstdate= data[0].time;
-        // DATA JOIN
-        // Join new data with old elements, if any.
+
         var circles = svg.selectAll("circle")
             .data(data, function(d) { return d.id; });
-        // ENTER
-      // Create new elements as needed.
+
       circles.enter()
             .append("circle")
             .attr("cy", h)
@@ -94,9 +92,6 @@ function update(data, speed, max) {
                   return "#c03";
                 }
               })
-              /*.on("mouseover", function(d){
-                info.html("<h3>" + d.mag + " " + d.type + "</h3>" + d.location + ", " + d.county + "<p>" + d.date + "</p><p>" + d.injuries + " injured</p><p>" + d.deaths + " deaths</p>$" + d.damage + " in damages.");
-              })*/
             .transition()
               .duration(speed)
               .style("fill-opacity", .65)
@@ -137,9 +132,6 @@ function update(data, speed, max) {
                 return calculate_y_pos_injured((parseInt(d.injuries) + parseInt(d.deaths)), max);
               });
               
-           
-
-
           circles.exit().transition()
               .duration(speed)
               .attr("cy", h)
@@ -158,41 +150,34 @@ function numberWithCommas(x) {
 }
 
 function populate_graph(q, p, s) {
-    
+
+    $('a').removeClass('active');
     switch(p) {
         case "tornado":
-            $('a').removeClass('active');
             $('#tornado').addClass('active');
             $('#county').val(false);
             break;
         case "hail":
-            $('a').removeClass('active');
             $('#hail').addClass('active');
             $('#county').val(false);
             break;
         case "heat":
-            $('a').removeClass('active');
             $('#heat').addClass('active');
             $('#county').val(false);
             break;
         case "winter storm":
-            $('a').removeClass('active');
             $('#winter').addClass('active');
             $('#county').val(false);
             break;
         case "thunderstorm wind":
-            $('a').removeClass('active');
             $('#wind').addClass('active');
             $('#county').val(false);
             break;
         default:
-            $('a').removeClass('active');
             $('#all').addClass('active');
-
     }
 
     var url = "ws/getData.php";
-
     if(q != false) {
         url += "?q=" + q + "&p=" + p;
     }
