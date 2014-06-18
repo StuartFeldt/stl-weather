@@ -15,8 +15,8 @@ if(isset($_GET['q']) && isset($_GET['p'])) {
 	$p = $_GET['p'];
 
 	$query = sprintf("SELECT * FROM data WHERE %s='%s' order by date asc",
-            mysql_real_escape_string($q),
-            mysql_real_escape_string($p));
+            mysqli_real_escape_string($q),
+            mysqli_real_escape_string($p));
 
 	$result = mysqli_query($con,$query);
 
