@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href="index.css" rel="stylesheet">
+        <link href="tooltip.css" rel="stylesheet">
+        <link rel="icon" 
+      type="image/png" 
+      href="favicon.ico">
+    </head>
+    <body>
+        <div id="title">
+            <h1>Greater St. Louis Weather</h1>
+            <h4>January 2000 - May 2014</h4>
+        </div>
+        <p id="graph-controls">
+            <span><a id="all" class="active" href="javascript:populate_graph(false, false, 1500)">All</a></span> | 
+            <span><a id="tornado" href="javascript:populate_graph('type', 'tornado', 600)">Tornado</a></span> | 
+            <span><a id="hail" href="javascript:populate_graph('type', 'hail', 600)">Hail</a></span> | 
+            <span><a id="heat" href="javascript:populate_graph('type', 'heat', 600)">Heat</a></span> | 
+            <span><a id="winter" href="javascript:populate_graph('type', 'winter storm', 600)">Winter Storm</a></span> | 
+            <span><a id="wind" href="javascript:populate_graph('type', 'thunderstorm wind', 600)">Wind</a></span> | 
+            <span><select id="county">
+                <option value="false">All Counties</option>
+                <option value="BOND CO.">Bond</option>
+                <option value="CALHOUN CO.">Calhoun</option>
+                <option value="CLINTON CO.">Clinton</option>
+                <option value="FRANKLIN CO.">Franklin</option>
+                <option value="JEFFERSON CO.">Jefferson</option>
+                <option value="JERSEY CO.">Jersey</option>
+                <option value="LINCOLN CO.">Lincoln</option>
+                <option value="MACOUPIN CO.">Macoupin</option>
+                <option value="MADISON CO.">Madison</option>
+                <option value="MONROE CO.">Monroe</option>
+                <option value="ST. CHARLES CO.">St Charles</option>
+                <option value="ST. CLAIR CO.">St. Clair</option>
+                <option value="ST. FRANCOIS CO.">St. Francois</option>
+                <option value="ST. LOUIS CO.">St Louis</option>
+                <option value="WARREN CO.">Warren</option>
+                <option value="WASHINGTON CO.">Washington</option>
+            </select></span>
+        </p>
+        <div id="graph-container"></div>
+        <script src="index.js"></script>
+        <script src="tooltip.js"></script>
+    </body>
+</html>     

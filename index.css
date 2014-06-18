@@ -1,0 +1,73 @@
+a, body {
+	text-decoration: none;
+	font-family:arial;
+	color:#444;
+	font-size:12px;
+}
+a:hover, a.active {
+	color:#449;
+	text-decoration:underline;
+}
+
+svg { font-size:10px;}
+h1,h4,h3{ margin:0;padding:0;}
+h1 { font-family:tahoma;}
+h4 { 
+	color:#999;
+	font-weight:lighter;
+	font-family:arial;
+}
+
+h3 {
+	border-bottom:1px solid #afafaf;
+	padding:0 10px;
+}
+
+.bottom-tip {
+	padding:5px;
+}
+
+
+#info {
+    width:200px;
+    height:200px;
+    border:1px solid #333;
+    font-size:12px;
+    font-family:arial;
+}
+
+#graph-container {
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#graph-controls, #title {text-align:center;}
+
+#graph-controls {border-bottom:1px solid #afafaf;}
+
+#tornado {
+}
+
+#winter {
+}
+
+#hail {
+}
+
+#heat {
+
+}
+
+#flash {
+
+}
+ #flood {
+
+ }
+
+ #wind {
+
+ }
+
+ #snow{}
